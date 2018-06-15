@@ -1,0 +1,50 @@
+Welcome to Introduction to Python!
+In this course, we use Python version 3 (or simply Python 3).
+If you'd like more details on previous versions of Python and how version 3 is different than previous versions,
+check out the History of Python on Wikipedia. If you're new to Python or programming in general,
+this article will make more sense after you complete a lesson or two so you may want to hold off for now.
+All you need to know now is that your solution code for the programming exercises in this course will be
+graded based on Python 3 code.
+
+What's Ahead
+
+Lesson 2: Data Types and Operators
+Data Types: Integers, Floats, Booleans, Strings, Lists, Tuples, Sets, Dictionaries
+Operators: Arithmetic, Assignment, Comparison, Logical, Membership, Identity
+Built-In Functions, Compound Data Structures, Type Conversion
+Whitespace and Style Guidelines
+
+Lesson 3: Control Flow
+Conditional Statements
+Boolean Expressions
+For and While Loops
+Break and Continue
+Zip and Enumerate
+List Comprehensions
+
+Lesson 4: Functions
+Defining Functions
+Variable Scope
+Documentation
+Lambda Expressions
+Iterators and Generators
+
+Lesson 5: Scripting
+Python Installation and Environment Setup
+Running and Editing Python Scripts
+Interacting with User Input
+Handling Exceptions
+Reading and Writing Files
+Importing Local, Standard, and Third-Party Modules
+Experimenting with an Interpreter
+
+Programming In Python
+As you learn Python throughout this course, there are a few things you should keep in mind.
+
+Python is case sensitive.
+
+Spacing is important.
+
+Use error messages to help you learn.
+
+Let’s get started!
