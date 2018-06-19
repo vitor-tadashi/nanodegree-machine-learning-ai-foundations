@@ -139,3 +139,71 @@ thursday_sales = int(thurs_sales)
 friday_sales = int(fri_sales)
 total_sales = monday_sales+tuesday_sales+wednesday_sales+thursday_sales+friday_sales
 print("This week's total sales: " + str(total_sales))
+
+
+# Quiz: List Indexing
+# Use list indexing to determine how many days are in a particular month
+# based on the integer variable month, and store that value in the integer
+# variable num_days. For example, if month is 8, num_days should be set to 31,
+# since the eighth month, August, has 31 days.
+
+# Remember to account for zero-based indexing!
+month = 8
+days_in_month = [31,28,31,30,31,30,31,31,30,31,30,31]
+
+# use list indexing to determine the number of days in month
+num_days = days_in_month[month-1]
+
+print(num_days)
+
+
+# Quiz: Slicing Lists
+# Select the three most recent dates from this list using list slicing notation. Hint: negative indexes work in slices!
+
+
+eclipse_dates = ['June 21, 2001', 'December 4, 2002', 'November 23, 2003',
+                 'March 29, 2006', 'August 1, 2008', 'July 22, 2009',
+                 'July 11, 2010', 'November 13, 2012', 'March 20, 2015',
+                 'March 9, 2016']
+
+
+# TODO: Modify this line so it prints the last three elements of the list
+print(eclipse_dates[-3:])
+
+
+# Quiz: Define a Dictionary
+# Define a Dictionary, population,
+# that provides information
+# on the world's largest cities.
+# The key is the name of a city
+# (a string), and the associated
+# value is its population in
+# millions of people.
+
+#   Key     |   Value
+# Shanghai  |   17.8
+# Istanbul  |   13.3
+# Karachi   |   13.0
+# Mumbai    |   12.5
+population = {"Shanghai": 17.8, "Istanbul": 13.3, "Karachi": 13.0, "Mumbai": 12.5}
+print(population)
+
+
+# Quiz: Adding Values to Nested Dictionaries
+# Try your hand at working with nested dictionaries.
+# Add another entry, 'is_noble_gas,' to each dictionary in the elements dictionary.
+# After inserting the new entries you should be able to perform these lookups:
+# >>> print(elements['hydrogen']['is_noble_gas'])
+# False
+# >>> print(elements['helium']['is_noble_gas'])
+# True
+elements = {'hydrogen': {'number': 1, 'weight': 1.00794, 'symbol': 'H'},
+            'helium': {'number': 2, 'weight': 4.002602, 'symbol': 'He'}}
+
+# todo: Add an 'is_noble_gas' entry to the hydrogen and helium dictionaries
+# hint: helium is a noble gas, hydrogen isn't
+elements["hydrogen"]["is_noble_gas"] = False
+elements["helium"]["is_noble_gas"] = True
+
+print(elements['hydrogen']['is_noble_gas'])
+print(elements['helium']['is_noble_gas'])
