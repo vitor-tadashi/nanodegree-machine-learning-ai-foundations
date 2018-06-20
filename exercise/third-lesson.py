@@ -211,3 +211,117 @@ while (num+1)**2 < limit:
 nearest_square = num**2
 
 print(nearest_square)
+
+
+# Quiz: Break the String
+# Write a loop with a break statement to create a string, news_ticker, that is exactly 140 characters long.
+# You should create the news ticker by adding headlines from the headlines list, inserting a space in between each
+# headline. If necessary, truncate the last headline in the middle so that news_ticker is exactly 140 characters long.
+#
+# Remember that break works in both for and while loops. Use whichever loop seems most appropriate.
+# Consider adding print statements to your code to help you resolve bugs.
+# HINT: modify the headlines list to verify your loop works with different inputs
+headlines = ["Local Bear Eaten by Man",
+             "Legislature Announces New Laws",
+             "Peasant Discovers Violence Inherent in System",
+             "Cat Rescues Fireman Stuck in Tree",
+             "Brave Knight Runs Away",
+             "Papperbok Review: Totally Triffic"]
+
+news_ticker = ""
+# write your loop here
+for headline in headlines:
+    news_ticker += headline + " "
+    news_ticker = (news_ticker[:140]) if len(news_ticker) > 140 else news_ticker
+
+
+print(news_ticker)
+
+
+# Quiz: Zip Coordinates
+# Use zip to write a for loop that creates a string specifying the label and coordinates of each
+# point and appends it to the list points. Each string should be formatted as label: x, y, z.
+# For example, the string for the first coordinate should be F: 23, 677, 4.
+x_coord = [23, 53, 2, -12, 95, 103, 14, -5]
+y_coord = [677, 233, 405, 433, 905, 376, 432, 445]
+z_coord = [4, 16, -6, -42, 3, -6, 23, -1]
+labels = ["F", "J", "A", "Q", "Y", "B", "W", "X"]
+
+points = []
+# write your for loop here
+for label, x, y, z in zip(labels, x_coord, y_coord, z_coord):
+    points.append("{}: {}, {}, {}".format(label, x, y, z))
+
+
+for point in points:
+    print(point)
+
+
+# Quiz: Zip Lists to a Dictionary
+# Use zip to create a dictionary cast that uses names as keys and heights as values.
+cast_names = ["Barney", "Robin", "Ted", "Lily", "Marshall"]
+cast_heights = [72, 68, 72, 66, 76]
+
+cast = dict(zip(cast_names, cast_heights))
+print(cast)
+
+
+# Quiz: Unzip Tuples
+# Unzip the cast tuple into two names and heights tuples.
+cast = (("Barney", 72), ("Robin", 68), ("Ted", 72), ("Lily", 66), ("Marshall", 76))
+
+# define names and heights here
+names, heights = zip(*cast)
+
+print(names)
+print(heights)
+
+
+# Quiz: Transpose with Zip
+# Use zip to transpose data from a 4-by-3 matrix to a 3-by-4 matrix.
+# There's actually a cool trick for this! Feel free to look at the solutions if you can't figure it out.
+data = ((0, 1, 2), (3, 4, 5), (6, 7, 8), (9, 10, 11))
+
+data_transpose = tuple(zip(*data))
+print(data_transpose)
+
+# Quiz: Enumerate
+# Use enumerate to modify the cast list so that each element contains the name followed by the
+# character's corresponding height. For example, the first element of cast should change from "Barney Stinson" to
+# "Barney Stinson 72".
+cast = ["Barney Stinson", "Robin Scherbatsky", "Ted Mosby", "Lily Aldrin", "Marshall Eriksen"]
+heights = [72, 68, 72, 66, 76]
+
+# write your for loop here
+for i, name in enumerate(cast):
+    cast[i] = "{} {}".format(name, heights[i])
+
+print(cast)
+
+
+# Quiz: Extract First Names
+# Use a list comprehension to create a new list first_names containing just the first names in names in lowercase.
+names = ["Rick Sanchez", "Morty Smith", "Summer Smith", "Jerry Smith", "Beth Smith"]
+
+first_names = [name.lower().split()[0] for name in names]
+print(first_names)
+
+
+# Quiz: Multiples of Three
+# Use a list comprehension to create a list multiples_3 containing the first 20 multiples of 3.
+multiples_3 = [x*3 for x in range(1, 21)]
+print(multiples_3)
+
+
+# Quiz: Filter Names by Scores
+# Use a list comprehension to create a list of names passed that only include those that scored at least 65.
+scores = {
+             "Rick Sanchez": 70,
+             "Morty Smith": 35,
+             "Summer Smith": 82,
+             "Jerry Smith": 23,
+             "Beth Smith": 98
+          }
+
+passed = [name for (name, score) in scores.items() if score >= 65]
+print(passed)
