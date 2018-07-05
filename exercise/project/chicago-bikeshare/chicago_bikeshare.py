@@ -53,8 +53,17 @@ input("Press Enter to continue...")
 # TODO: Create a function to add the columns(features) of a list in another list in the same order
 
 
-def column_to_list(data, position):
-    # Tip: You can use a for to iterate over the samples, get the feature by index and append into a list
+def column_to_list(data: list, position: int) -> list:
+    """
+    This function is intended to generate a list of unique values ​​through a column of another list
+    Args:
+      data: A list of values.
+      position: The position of the column to be read
+    Returns:
+      List of values of that position
+      :rtype: list
+
+    """
     return [item[position] for item in data]
 
 
@@ -92,7 +101,16 @@ input("Press Enter to continue...")
 # Should return a list with [count_male, count_female] (e.g., [10, 15] means 10 Males, 15 Females)
 
 
-def count_gender(data):
+def count_gender(data: list) -> list:
+    """
+    This function is intended to quantify each genre within the list received
+    Args:
+      data: A list of values.
+    Returns:
+      List with 2 position, first the count of the masculine gender and second the count feminine gender
+      :rtype: list
+
+    """
     count_male = len([item for item in data if item[-2] == "Male"])
     count_female = len([item for item in data if item[-2] == "Female"])
     return [count_male, count_female]
@@ -115,6 +133,15 @@ input("Press Enter to continue...")
 
 
 def most_popular_gender(data):
+    """
+    This function returns the most popular genre from the list received
+    Args:
+      data: A list of values.
+    Returns:
+      Returns Male, Female or Equal
+      :rtype: string
+
+    """
     response = count_gender(data)
     count_male = response[0]
     count_female = response[1]
@@ -152,6 +179,15 @@ input("Press Enter to continue...")
 
 
 def count_user_type(data):
+    """
+    This function is intended to quantify each user type within the list received
+    Args:
+      data: A list of values.
+    Returns:
+      List with 2 position, first the count of the subscriber and second the count of the customer
+      :rtype: list
+
+    """
     count_subscriber = len([item for item in data if item[-3] == "Subscriber"])
     count_customer = len([item for item in data if item[-3] == "Customer"])
     return [count_subscriber, count_customer]
@@ -230,7 +266,7 @@ input("Press Enter to continue...")
 # TASK 10
 # Gender is easy because usually only have a few options. How about start_stations? How many options does it have?
 # TODO: Check types how many start_stations do we have using set()
-user_types = set()
+user_types = set([x[3] for x in data_list])
 
 print("\nTASK 10: Printing start stations:")
 print(len(user_types))
@@ -259,11 +295,20 @@ input("Press Enter to continue...")
 # TODO: Create a function to count user types without hardcoding the types
 # so we can use this function with a different kind of data.
 print("Will you face it?")
-answer = "no"
+answer = "yes"
 
-def count_items(column_list):
-    item_types = []
-    count_items = []
+
+def count_items(data):
+    """
+    A strange method to return the user types and count
+    Args:
+      data: User types
+    Returns:
+      List of types and count items
+
+    """
+    item_types = set([item for item in data])
+    count_items = [1 for item in data]
     return item_types, count_items
 
 
