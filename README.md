@@ -16,3 +16,10 @@
 - Kernel Method
 - K-means Clustering
 - Hierarchical Clustering
+
+2. Introduction to Python
+- Data Types and Operators
+- Control Flow
+- Functions
+- Scripting
+- NumPy, Pandas, Matplotlib
